@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour{
 
     public float speed;
     public Boundary boundary;
+    public float tilt;
 
     void FixedUpdate(){
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -25,7 +26,14 @@ public class PlayerController : MonoBehaviour{
         GetComponent<Rigidbody>().position = new Vector3(
             Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
             0.0f,
-            Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
-            );
+            Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax) );
+
+        //Tilt along the Z-axis (multiplied by a speed factor)
+        //Use tilt * -1 to tilt in correct direction
+        //Quaternions arre used for rotations in Unity
+        GetComponent<Rigidbody>().rotation = Quaternion.Euler(
+            0.0f,
+            0.0f,
+            GetComponent<Rigidbody>().velocity.x * -tilt);
     }
 }
