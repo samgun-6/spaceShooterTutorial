@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour{
@@ -13,11 +14,28 @@ public class GameController : MonoBehaviour{
     //Score
     public Text scoreText;
     public int score;
+    //End Text
+    public Text endText;
+    private bool gameEnded;
 
     // Start is called before the first frame update
     void Start(){
+        gameEnded = false;
+        endText.gameObject.SetActive(false);
         scoreText.text = "Score: 0";
         StartCoroutine(SpawnWaves());
+    }
+    void Update() {
+        if (gameEnded) {
+            if (Input.GetKeyDown(KeyCode.R)) {
+                Scene level = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(level.name);
+            }
+        }
+    }
+    public void endGame() {
+        gameEnded = true;
+        endText.gameObject.SetActive(true);
     }
     IEnumerator SpawnWaves() {
         //Wait some time before spawning the first wave

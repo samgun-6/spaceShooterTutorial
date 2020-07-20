@@ -37,6 +37,8 @@ public class ContactDestroy : MonoBehaviour{
             //explosion at the same position as the player object
             tmp = Instantiate(playerExplosion, other.transform.position, other.transform.rotation) as GameObject;
             Destroy(tmp, 1);
+            //Notify the gameController that the Game is over
+            controller.endGame();
         }
     }
 }
