@@ -7,10 +7,22 @@ public class ContactDestroy : MonoBehaviour{
 
     public GameObject asteroidExplosion;
     public GameObject playerExplosion;
+    private GameController controller;
+
+    void Start() {
+        GameObject tmp = GameObject.FindGameObjectWithTag("GameController");
+        controller = tmp.GetComponent<GameController> ();
+        if(controller == null) {
+            Debug.LogError("Unale to find the GameController script");
+        }
+    }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Boundary") {
             //Do nothing
             return;
+        }
+        if(other.tag != "Player"){
+            controller.addScore(10);
         }
         //Destroy the collision object
         Destroy(other.gameObject);
