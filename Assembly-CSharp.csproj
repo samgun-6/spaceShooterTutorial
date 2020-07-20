@@ -63,19 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BoundaryDestroy.cs" />
+    <Compile Include="Assets\Scripts\ContactDestroy.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\RandomRotator.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\TutorialInfo.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_BGScroller.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_DestroyByBoundary.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_DestroyByContact.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_DestroyByTime.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_EvasiveManeuver.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_GameController.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_Mover.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_PlayerController.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_RandomRotator.cs" />
-    <Compile Include="Assets\_Completed-Assets\Scripts\Done_WeaponController.cs" />
     <None Include="Assets\TutorialInfo\Fonts\LICENSE.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
